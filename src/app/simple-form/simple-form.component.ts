@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimpleFormComponent implements OnInit {
   result:string="足し算しましょう";
+  // 【イベント】「クリックされた」＝＞addAndShowという名前のメソッドを実行する
+  addAndShow() : void {
+    // ()の中に引数が入る、voidはデータ型（ここでの意味は値を戻さない）
+    this.result="これはテスト";
+    // 実行したい処理をここにかく
+  }
   constructor() { }
   // このコンポーメントが作られるときに実行したいプログラムをかく場所
   ngOnInit() {
