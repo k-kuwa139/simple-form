@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NON_BINDABLE_ATTR } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-simple-form',
@@ -7,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimpleFormComponent implements OnInit {
   result:string="足し算しましょう";
+  text1:string="0";
+  text2:string="0";
   // 【イベント】「クリックされた」＝＞addAndShowという名前のメソッドを実行する
   addAndShow() : void {
-    // ()の中に引数が入る、voidはデータ型（ここでの意味は値を戻さない）
-    this.result="これはテスト";
+    // addAndShowメソッドの中だけで使用する＝＞ローカル変数
+    let forResult:string="正しい値を入力してください";
+    let int1:number;
+    let int2:number;
+
+    int1 = Number(this.text1);
+    int2 = Number(this.text2);
+
+    if(!Number.isNaN(int1) && !Number.isNaN(int2)){
+        forResult = `${int1}+${int2}=${int1+int2}`;
+    }
+    this.result=forResult;
     // 実行したい処理をここにかく
   }
   constructor() { }
