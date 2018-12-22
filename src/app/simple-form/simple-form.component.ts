@@ -7,6 +7,8 @@ import { NON_BINDABLE_ATTR } from '@angular/compiler/src/render3/view/util';
   styleUrls: ['./simple-form.component.css']
 })
 export class SimpleFormComponent implements OnInit {
+  // 実行したい処理をここにかく
+
   result:string="足し算しましょう";
   text1:string="0";
   text2:string="0";
@@ -21,10 +23,9 @@ export class SimpleFormComponent implements OnInit {
     int2 = Number(this.text2);
 
     if(!Number.isNaN(int1) && !Number.isNaN(int2)){
-        forResult = `${int1}+${int2}=${int1+int2}`;
+      forResult = `${int1}+${int2}=${int1+int2}`;
     }
     this.result=forResult;
-    // 実行したい処理をここにかく
   }
   constructor() { }
   // このコンポーメントが作られるときに実行したいプログラムをかく場所
